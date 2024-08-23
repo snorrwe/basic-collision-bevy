@@ -1,1 +1,1 @@
-pub use crate::{AABBBundle, AABBCollision, CollisionFilter, CollisionPlugin, LayerMask};
+pub use crate::{AABBBundle, AABB, AABBCollision, CollisionFilter, CollisionPlugin, LayerMask};

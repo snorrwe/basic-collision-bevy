@@ -110,7 +110,8 @@ fn aabb_sort_sweep_system(
 
     e.send_batch(collisions_to_send.iter().copied());
 
-    let variance = (s2 - s * s) / (collection.aabbs.len() as f32);
+    let variance = s2 - s * s; // no need to divide by N as we only check for the greater
+                               // axis
 
     // update sorting axis to be the one with the greatest variance
     collection.sort_axis = (variance.y > variance.x) as usize;

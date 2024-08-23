@@ -63,7 +63,6 @@ fn aabb_sort_sweep_system(
 
     // rebuild the array
     collection.aabbs.clear();
-    collection.aabbs.reserve(q.iter().len());
     for (e, a, f) in q.iter() {
         collection.aabbs.push((e, a.0, *f));
     }

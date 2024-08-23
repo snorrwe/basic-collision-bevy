@@ -41,6 +41,13 @@ pub struct AABB {
     pub max: Vec2,
 }
 
+impl AABB {
+    pub fn from_size(size: Vec2) -> Self {
+        let s = size * 0.5;
+        Self { min: -s, max: s }
+    }
+}
+
 #[derive(Default, Clone, Debug, Bundle)]
 pub struct AABBBundle {
     pub aabb: AABB,

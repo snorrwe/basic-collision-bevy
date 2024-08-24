@@ -25,10 +25,10 @@
           pkgs.libxkbcommon
           pkgs.wayland # To use the wayland feature
           pkgs.libz
-          pkgs.renderdoc
           pkgs.openssl
         ];
         tools = [
+          pkgs.renderdoc
           pkgs.pkg-config
           pkgs.cargo-nextest
           pkgs.cargo-edit

@@ -1,6 +1,9 @@
 pub mod prelude;
 pub mod primitives;
 
+#[cfg(feature = "visualization")]
+pub mod visualization;
+
 use bevy::{prelude::*, transform::TransformSystem};
 
 /// Bitmask of layers. Each bit represents a different collision layer
@@ -13,6 +16,13 @@ pub struct CollisionFilter {
 }
 
 impl CollisionFilter {
+    pub fn all() -> Self {
+        Self {
+            self_layers: !0,
+            collisions_mask: !0,
+        }
+    }
+
     /// checks self layers against other collision
     ///
     /// not commutative!
@@ -166,6 +176,9 @@ impl Plugin for CollisionPlugin {
                     .in_set(Labels::Sweep),
             ),
         );
+
+        #[cfg(feature = "visualization")]
+        app.add_plugins(visualization::VisualizationPlugin);
     }
 }
 

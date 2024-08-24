@@ -3,5 +3,9 @@ name = "basic-collision-bevy"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = ["visualization"]
+visualization = []
+
 [dependencies]
 bevy = "0.14.1"

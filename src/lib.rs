@@ -61,6 +61,7 @@ impl AABB {
 #[derive(Default, Clone, Debug, Bundle)]
 pub struct AABBBundle {
     pub aabb: AABB,
+    pub global: AABBGlobal,
     pub filter: CollisionFilter,
     pub transform: TransformBundle,
 }
